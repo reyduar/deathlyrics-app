@@ -27,8 +27,7 @@
         </div>
         <div class="form-group">
             <label for="description-input">Original Lyric</label>
-            <textarea rows="5" name="lyricOrig" class="form-control" type="text" placeholder="Type the original lyric (English)" #lyricOrig="ngModel" [(ngModel)]="newLyric.lyricOrig"></textarea>
-            <em class="csmall2" *ngIf="!lyricOrig.valid">* required entry field</em>
+            <div [froalaEditor] [(froalaModel)]="newLyric.lyricOrig"></div>
         </div>
         <div class="form-group">
             <label for="description-input">Translate Lyric</label>
