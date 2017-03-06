@@ -1,0 +1,49 @@
+<div id="blue">
+    <div class="container">
+        <div class="row">
+            <h3>{{title}}</h3>
+        </div>
+    </div>
+</div>
+<div class="container mtb" style="margin-bottom: 50px;">
+    <form #myFormulario="ngForm" (ngSubmit)="onSubmit()" role="form">
+        <div class="text-right">
+          <button type="submit" class="btn btn-theme" [disabled]="!myFormulario.form.valid"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
+        </div>
+        <div class="form-group">
+            <label for="name-input">Title</label>
+            <input [(ngModel)]="newLyric.name" name="name" class="form-control" type="text" placeholder="Type lyric title" #name="ngModel" required>
+            <em class="csmall2" *ngIf="!name.valid">* required entry field</em>
+        </div>
+        <div class="form-group">
+            <label for="artist-input">Artist</label>
+            <input [(ngModel)]="newLyric.artist" name="artist" class="form-control" type="text" placeholder="Type artist name" #artist="ngModel" pattern="[A-Za-z\s]*" required>
+            <em class="csmall2" *ngIf="!artist.valid">* required entry field</em>
+        </div>
+        <div class="form-group">
+            <label for="type-input">Album</label>
+            <input [(ngModel)]="newLyric.album" name="album" class="form-control" type="text" placeholder="Type album name" #album="ngModel" required>
+            <em class="csmall2" *ngIf="!album.valid">* required entry field</em>
+        </div>
+        <div class="form-group">
+            <label for="description-input">Original Lyric</label>
+            <textarea rows="5" name="lyricOrig" class="form-control" type="text" placeholder="Type the original lyric (English)" #lyricOrig="ngModel" [(ngModel)]="newLyric.lyricOrig"></textarea>
+            <em class="csmall2" *ngIf="!lyricOrig.valid">* required entry field</em>
+        </div>
+        <div class="form-group">
+            <label for="description-input">Translate Lyric</label>
+            <textarea rows="5" name="lyricTrans" class="form-control" type="text" placeholder="Type the lyric translated (Spanish)" #lyricTrans="ngModel" [(ngModel)]="newLyric.lyricTrans"></textarea>
+            <em class="csmall2" *ngIf="!lyricTrans.valid">* required entry field</em>
+        </div>
+        <div class="form-group">
+            <label for="type-input">Country</label>
+            <input [(ngModel)]="newLyric.country" name="country" class="form-control" type="text" placeholder="Type country of artist" #country="ngModel" required>
+            <em class="csmall2" *ngIf="!country.valid">* required entry field</em>
+        </div>
+        <div class="form-group">
+            <label for="code-input">Year</label>
+            <input name="year" class="form-control" type="text" placeholder="Type year of album" #year="ngModel"  [(ngModel)]="newLyric.year" required>
+            <em class="csmall2" *ngIf="!year.valid">* required entry field</em>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,7 @@
+{
+  "name": "bookmark-dev",
+  "description": "Create By Ariel Duarte (c)2016",
+  "repository": "https://github.com/reyduar/bookmark-dev",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["angular2", "express", "node"]
+}
